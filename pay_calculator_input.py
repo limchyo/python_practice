@@ -22,7 +22,7 @@ time_of_day = int(input("일일근무시간 : "))
 day_of_month = int(input("한달근무일수 : "))
 
 practice = int(input('''
-수습을 적용하나요?
+수습(90%)을 적용하나요?
 1. 적용
 2. 미적용
 '''))
@@ -30,8 +30,8 @@ practice = int(input('''
 tax = int(input('''
 세금을 적용하나요?
 1. 미적용
-2. 4대 보혐료 공제
-3. 소득세 공제
+2. 4대 보혐료 공제(8.41%)
+3. 소득세 공제(3.3%)
 4. 모두 적용
 '''))
 
@@ -54,6 +54,7 @@ else:
 
 profit = profit - practice_price - tax_price
 
+print("\n총 세금 : {}원을 제외한".format(tax_price))
 print("예상 월급은 : {}원입니다\n\n".format(profit))
 print("{}원으로 무엇을 할 수 있을까요?".format(profit))
 print("PC방 (1200원 기준) : {}시간".format(profit // 1200))
