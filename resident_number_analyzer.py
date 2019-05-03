@@ -147,3 +147,18 @@ print("\n생년월일 : " + birth_year + "년 " + birth_month + "월 " + birth_d
 print("성별 : " + sex)
 print("출생지역 : " + local)
 '''
+
+# 유효성 검증
+magic_key = 11
+hidden_number = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5]
+middle_number = 0
+
+for index in range(len(hidden_number)):
+    middle_number = middle_number + int(number[index]) * hidden_number[index]
+
+value = magic_key - (middle_number % magic_key)
+
+if str(value) == number[-1]:
+    print("유효한 주민번호입니다.")
+else:
+    print("유효하지 않는 주민번호입니다.")
