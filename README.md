@@ -322,6 +322,31 @@ PC방 (1200원 기준) : 871시간
 
 6.2. 계산기 프로그램 함수화하기
 > `add`, `sub`, `mul`, `div_int`, `div_float`, `remainder` 명으로 함수 
+```
+def add(num1, num2):
+    result = num1 + num2
+    return result
+
+def sub(num1, num2):
+    result = num1 - num2
+    return result
+
+def mul(num1, num2):
+    result = num1 * num2
+    return result
+
+def div_int(num1, num2):
+    result = num1 // num2
+    return result
+
+def div_float(num1, num2):
+    result = num1 / num2
+    return result
+
+def remainder(num1, num2):
+    result = num1 % num2
+    return result
+```
 
 7. 학점계산기 프로그램
 > `다중조건문` 활용하기
