@@ -370,6 +370,30 @@ PC방 (1200원 기준) : 871시간
 출생지역 : 경상남도
 ```
 
+8.1. 주민번호 유효성 검증 기능 추가
+> 유효성 검증 방법을 통해 입력한 주민번호의 유효성 판단한다.
+```
+'''
+주민번호 유효성 검증하기
+주민번호 12자리 중 마지막을 제외한 각 자리수와 [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5] 범위의 각각의 수를 곱한다.
+각각 곱한 값을 전부 더하여 11로 나눈 나머지 값을 11에서 빼주면 결과값이 도출된다.
+이 결과값이 입력한 주민번호 마지막 자리의 수와 동일하면 유효, 아니면 유효하지 않는 주민번호가 된다.
+'''
+magic_key = 11
+hidden_number = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5]
+middle_number = 0
+
+for index in range(len(hidden_number)):
+    middle_number = middle_number + int(number[index]) * hidden_number[index]
+
+value = magic_key - (middle_number % magic_key)
+
+if str(value) == number[-1]:
+    print("유효한 주민번호입니다.")
+else:
+    print("유효하지 않는 주민번호입니다.")
+```
+
 9. 로또 번호 생성기 프로그램
 > `list()`, `append()`, `random`, `while`문 활용하기
 ```
