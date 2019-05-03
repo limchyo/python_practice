@@ -2,15 +2,6 @@ import random
 
 print("배스킨라빈스 31 게임 프로그램입니다!")
 
-def validate_input(prompt, valid_list):
-    while True:
-        value = int(input(prompt))
-        if value in valid_list:
-            break
-        else:
-            print("잘못된 입력입니다. 재입력해주세요.")
-    return value
-
 def call_numbers(size, called):
     for _ in range(size):
         called += 1
@@ -20,6 +11,27 @@ def call_numbers(size, called):
             break
 
     return called
+
+def validate_input(prompt, valid_list):
+    while True:
+        value = int(input(prompt))
+        if value in valid_list:
+            break
+        else:
+            print("잘못된 입력입니다. 재입력해주세요.")
+    return value
+
+def call_computer(call_status):
+    if call_status % 4 == 0:
+        computer_call = 2
+    elif call_status % 4 == 1:
+        computer_call = 1
+    elif call_status % 4 == 3:
+        computer_call = 3
+    else:
+        computer_call = random.randint(1, 3)
+
+    return computer_call
 
 order = validate_input("순서를 입력하세요. (선공 1, 후공 0 입력) : ", [0, 1])
 
@@ -62,7 +74,7 @@ while call < 31:
 
     else:
         print("컴퓨터의 차례")
-        size_of_call = random.randint(1, 3)
+        size_of_call = call_computer(call)
 
         # while True:
         #     if size_of_call in [1, 2, 3]:
@@ -70,7 +82,10 @@ while call < 31:
         #     else:
         #         print("잘못된 입력입니다. 재입력해주세요.")
 
+        # call = call_numbers(size_of_call, call)
         call = call_numbers(size_of_call, call)
+
+
 
         # for _ in range(size_of_call):
         #     call += 1
