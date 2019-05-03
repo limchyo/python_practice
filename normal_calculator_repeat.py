@@ -1,4 +1,29 @@
 print("일반계산기 프로그램입니다!")
+
+def add(num1, num2):
+    result = num1 + num2
+    return result
+
+def sub(num1, num2):
+    result = num1 - num2
+    return result
+
+def mul(num1, num2):
+    result = num1 * num2
+    return result
+
+def div_int(num1, num2):
+    result = num1 // num2
+    return result
+
+def div_float(num1, num2):
+    result = num1 / num2
+    return result
+
+def remainder(num1, num2):
+    result = num1 % num2
+    return result
+
 while True:
     value1 = int(input("계산할 첫번째 값을 입력해주세요 : "))
     value2 = int(input("계산할 두번째 값을 입력해주세요 : "))
@@ -16,22 +41,28 @@ while True:
 
     if calculator_way == 1:
         way = "더하기 값 (a + b)"
-        result = value1 + value2
+        result = add(value1, value2)
+        # result = value1 + value2
     elif calculator_way == 2:
         way = "빼기 값 (a - b)"
-        result = value1 - value2
+        result = sub(value1, value2)
+        # result = value1 - value2
     elif calculator_way == 3:
         way = "곱하기 값 (a * b)"
-        result = value1 * value2
+        result = mul(value1, value2)
+        # result = value1 * value2
     elif calculator_way == 4:
         way = "정수 나누기 값 (a // b)"
-        result = value1 // value2
+        result = div_int(value1, value2)
+        # result = value1 // value2
     elif calculator_way == 5:
         way = "실수 나누기 값 (a / b)"
-        result = value1 / value2
+        result = div_float(value1, value2)
+        # result = value1 / value2
     elif calculator_way == 6:
         way = "나머지 구하기 (a % b)"
-        result = value1 % value2
+        result = remainder(value1, value2)
+        # result = value1 % value2
     elif calculator_way == 7:
         print("\n프로그램을 종료합니다.")
         break
