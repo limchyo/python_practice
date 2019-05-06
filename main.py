@@ -5,12 +5,16 @@ from calculators import (
     pay_calculator_input
 )
 from games import (
-    baseball_game_2nd, 
+    baseball_game_2nd,
     baskin_robbins_game,
     crocodile_game,
     rsp_game_repeat
 )
-
+from life import (
+    lotto_numbers_creator,
+    lunch_recommend,
+    resident_number_analyzer,
+)
 
 if __name__ == "__main__":
 
@@ -28,6 +32,9 @@ if __name__ == "__main__":
 6. 배스킨라빈스 게임
 7. 악어 게임
 8. 가위바위보 게임
+9. 로또 추첨기
+10. 점심 추천기
+11. 주민번호 분석기
 
 선택 : '''))
 
@@ -47,6 +54,12 @@ if __name__ == "__main__":
             crocodile_game.crocodile()
         elif choice == 8:
             rsp_game_repeat.r_s_p()
+        elif choice == 9:
+            lotto_numbers_creator.lotto_creator()
+        elif choice == 10:
+            lunch_recommend.lunch_recommendation()
+        elif choice == 11:
+            resident_number_analyzer.resident_number_analyzing()
         elif choice == 0:
             print("프로그램을 종료합니다")
             break
